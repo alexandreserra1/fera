@@ -14,9 +14,16 @@ func TestDoisApertosDoMesmoBotaoSeparadosContamDois(t *testing.T) {
 	b := nova(t, nil)
 	b.passos(t, 1)
 
+	inicio := b.h.Now()
 	b.h.Agendar(30*time.Second, hal.BotaoInteragir)
 	b.h.Agendar(90*time.Second, hal.BotaoInteragir)
-	b.passos(t, 2)
+
+	// Avança por TEMPO e não por contagem de passos: com o modo ativo ligado
+	// cada passo pode valer 100 ms em vez de 5 min, e um número fixo de
+	// passos deixaria de alcançar o segundo aperto.
+	for b.h.Now().Sub(inicio) < 3*time.Minute {
+		b.passos(t, 1)
+	}
 
 	pend, err := b.st.Pending()
 	if err != nil {
@@ -34,9 +41,12 @@ func TestBotoesDiferentesNaMesmaAcordada(t *testing.T) {
 	b := nova(t, nil)
 	b.passos(t, 1)
 
+	inicio := b.h.Now()
 	b.h.Agendar(time.Minute, hal.BotaoInteragir)
 	b.h.Agendar(time.Minute, hal.BotaoAlimentar)
-	b.passos(t, 2)
+	for b.h.Now().Sub(inicio) < 2*time.Minute {
+		b.passos(t, 1)
+	}
 
 	pend, err := b.st.Pending()
 	if err != nil {
@@ -53,9 +63,12 @@ func TestQuiqueDoMesmoBotaoNoMesmoInstanteColapsa(t *testing.T) {
 	b := nova(t, nil)
 	b.passos(t, 1)
 
+	inicio := b.h.Now()
 	b.h.Agendar(time.Minute, hal.BotaoInteragir)
 	b.h.Agendar(time.Minute, hal.BotaoInteragir)
-	b.passos(t, 2)
+	for b.h.Now().Sub(inicio) < 2*time.Minute {
+		b.passos(t, 1)
+	}
 
 	pend, err := b.st.Pending()
 	if err != nil {

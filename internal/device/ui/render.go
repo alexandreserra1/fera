@@ -47,15 +47,42 @@ const (
 // acorda e o consumo médio deixa de fechar. TestRenderNaoAloca trava isso.
 var numBuf [8]byte
 
-// Render desenha UM frame no framebuffer. Buffer entra, pixels saem: nenhuma
-// interface, nenhum driver, nenhum relógio. É essa assinatura que faz todo
+// QuadrosDeRespiracao é o tamanho do ciclo de animação ociosa.
+//
+// Oito quadros a 10 fps dão um ciclo de 0,8 s, que é ritmo de respiração
+// calma. Menos quadros ficam mecânicos; mais não se percebe.
+const QuadrosDeRespiracao = 8
+
+// respiracao devolve o deslocamento vertical do bicho no quadro dado.
+//
+// Um sprite deslocado alguns pixels em ciclo é como jogo retrô faz animação
+// ociosa desde sempre: custa ZERO arte nova e transforma uma figura colada na
+// tela num bicho que parece vivo.
+//
+// A curva sobe devagar e desce devagar (0,1,2,2,2,1,0,0), em vez de alternar
+// entre dois valores: alternância pura lê como tremor, não como respiração.
+func respiracao(quadro int) int16 {
+	desloc := [QuadrosDeRespiracao]int16{0, 1, 2, 2, 2, 1, 0, 0}
+	q := quadro % QuadrosDeRespiracao
+	if q < 0 {
+		q += QuadrosDeRespiracao
+	}
+	return desloc[q]
+}
+
+// Render desenha o bicho parado. É o que as telas douradas travam e o que o
+// device mostra quando ninguém está mexendo nele.
+func Render(b *display.Buffer, v sim.View) { RenderQuadro(b, v, 0) }
+
+// RenderQuadro desenha UM frame no framebuffer. Buffer entra, pixels saem:
+// nenhuma interface, nenhum driver, nenhum relógio. É essa assinatura que faz todo
 // teste de tela do projeto rodar no Mac.
 //
 // Não faz laço e não dorme. Com memory LCD a imagem fica na tela sem energia,
 // então quem decide QUANDO redesenhar é o loop principal, não o renderer.
-func Render(b *display.Buffer, v sim.View) {
+func RenderQuadro(b *display.Buffer, v sim.View, quadro int) {
 	b.Clear()
-	b.BlitScaled(bichoX, bichoY, SpriteDoEstagio(v.Stage), escalaBicho)
+	b.BlitScaled(bichoX, bichoY+respiracao(quadro), SpriteDoEstagio(v.Stage), escalaBicho)
 
 	DrawText(b, textoX, estagioY, NomeDoEstagio(v.Stage))
 	DrawText(b, textoX, tracoY, NomeDoTraco(v.Trait))

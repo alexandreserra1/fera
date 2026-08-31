@@ -74,18 +74,21 @@ func evento(_ js.Value, args []js.Value) any {
 	return true
 }
 
-// quadro(agoraUnix, destino) desenha e devolve o que a tela mostra.
+// quadro(agoraUnix, nQuadro, destino) desenha e devolve o que a tela mostra.
+//
+// nQuadro é o quadro da animação de respiração: a página avança a ~10 fps,
+// que é o mesmo ritmo do modo ativo do device.
 //
 // destino é um Uint8Array de feraLargura*feraAltura/8 bytes que a página
 // aloca uma vez. O framebuffer é o MESMO formato do device: row-major, 1 bit
 // por pixel, MSB à esquerda.
 func quadro(_ js.Value, args []js.Value) any {
-	if len(args) < 2 {
+	if len(args) < 3 {
 		return nil
 	}
 	v := sim.Project(estado, time.Unix(int64(args[0].Int()), 0).UTC(), tuning)
-	ui.Render(fb, v)
-	js.CopyBytesToJS(args[1], fb.Bits)
+	ui.RenderQuadro(fb, v, args[1].Int())
+	js.CopyBytesToJS(args[2], fb.Bits)
 
 	return map[string]any{
 		"stage":   ui.NomeDoEstagio(v.Stage),

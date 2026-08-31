@@ -107,12 +107,19 @@ function desenhar(estado) {
   document.getElementById('nEventos').textContent = String(eventos.length);
 }
 
+let quadro = 0;
+let ultimoQuadro = 0;
+
 function laco(t) {
   const vel = Number(document.getElementById('velocidade').value);
   if (ultimoReal) agora += ((t - ultimoReal) / 1000) * vel;
   ultimoReal = t;
 
-  const estado = feraQuadro(Math.floor(agora), buf);
+  // A respiração corre no relógio REAL, não no acelerado: o bicho respira no
+  // mesmo ritmo esteja o tempo a 1x ou a 1 dia por segundo.
+  if (t - ultimoQuadro >= 100) { quadro++; ultimoQuadro = t; }
+
+  const estado = feraQuadro(Math.floor(agora), quadro, buf);
   desenhar(estado);
   requestAnimationFrame(laco);
 }

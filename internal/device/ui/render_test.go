@@ -170,3 +170,72 @@ func TestFramebufferCabeNoOrcamento(t *testing.T) {
 		t.Errorf("framebuffer de %d B, o docs/06 orça 1024", got)
 	}
 }
+
+// Animação de respiração: o bicho sobe e desce alguns pixels em ciclo.
+//
+// Custa ZERO arte nova — é o mesmo sprite deslocado — e é como jogo retrô faz
+// animação ociosa desde sempre. Sem isso o bicho é uma figura colada na tela,
+// e o modo ativo do loop (10 fps por 15 s) não tem o que desenhar.
+func TestRespiracaoMoveOBicho(t *testing.T) {
+	v := Frames()[3].View
+	vistos := map[string]bool{}
+	for q := range QuadrosDeRespiracao {
+		b := display.NewBuffer(Largura, Altura)
+		RenderQuadro(b, v, q)
+		vistos[b.String()] = true
+	}
+	if len(vistos) < 2 {
+		t.Errorf("os %d quadros deram %d imagens distintas: o bicho não se mexe",
+			QuadrosDeRespiracao, len(vistos))
+	}
+}
+
+// O quadro 0 tem que ser idêntico ao Render sem argumento: é o que as telas
+// douradas travam, e é o que o device mostra quando está parado.
+func TestQuadroZeroEhOFrameParado(t *testing.T) {
+	v := Frames()[3].View
+	a := display.NewBuffer(Largura, Altura)
+	c := display.NewBuffer(Largura, Altura)
+	Render(a, v)
+	RenderQuadro(c, v, 0)
+	if a.String() != c.String() {
+		t.Error("o quadro 0 difere do Render parado")
+	}
+}
+
+// A respiração não pode empurrar o bicho pra fora do quadro nem invadir a
+// área das barras: se invadir, o texto some atrás dele.
+func TestRespiracaoNaoInvadeAsBarras(t *testing.T) {
+	for q := range QuadrosDeRespiracao {
+		b := display.NewBuffer(Largura, Altura)
+		RenderQuadro(b, Frames()[4].View, q) // veterano, o maior
+		for y := int16(0); y < Altura; y++ {
+			if b.Get(rotuloX-2, y) {
+				t.Fatalf("quadro %d: o bicho encostou na coluna das barras", q)
+			}
+		}
+	}
+}
+
+// O ciclo tem que voltar ao começo: quadro N é igual ao quadro 0, senão a
+// animação "salta" ao reiniciar.
+func TestOCicloDeRespiracaoFecha(t *testing.T) {
+	v := Frames()[3].View
+	a := display.NewBuffer(Largura, Altura)
+	b := display.NewBuffer(Largura, Altura)
+	RenderQuadro(a, v, 0)
+	RenderQuadro(b, v, QuadrosDeRespiracao)
+	if a.String() != b.String() {
+		t.Error("o ciclo não fecha: a animação salta ao reiniciar")
+	}
+}
+
+// Animar não pode alocar: o modo ativo desenha 10 quadros por segundo.
+func TestRenderQuadroNaoAloca(t *testing.T) {
+	b := display.NewBuffer(Largura, Altura)
+	v := Frames()[3].View
+	q := 0
+	if n := testing.AllocsPerRun(200, func() { q++; RenderQuadro(b, v, q) }); n != 0 {
+		t.Errorf("RenderQuadro alocou %v vezes, esperado 0", n)
+	}
+}

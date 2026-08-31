@@ -212,11 +212,10 @@ func TestDiaRealistaCabeNoOrcamentoDeFlash(t *testing.T) {
 	}
 }
 
-// Ocioso acorda a cada 5 min; botão põe o device em modo ativo. O modo ativo
-// vem desligado por padrão (ver Config.DuracaoAtiva), então o teste liga
-// explicitamente pra exercitar o mecanismo que vai sustentar a animação.
+// Ocioso acorda a cada 5 min; botão põe o device em modo ativo por 15 s, que
+// é quando o bicho respira.
 func TestBotaoAcionaModoAtivo(t *testing.T) {
-	b := nova(t, func(c *Config) { c.DuracaoAtiva = 15 * time.Second })
+	b := nova(t, nil)
 	b.passos(t, 1)
 
 	b.h.Agendar(time.Minute, hal.BotaoInteragir)
@@ -485,13 +484,12 @@ func TestQuedaDeEnergiaNoSyncNaoPerdeOEvento(t *testing.T) {
 	}
 }
 
-// O modo ativo existe pra sustentar animação: o docs/06 fala em 10 fps por 15 s
-// quando o dono interage. Enquanto ui.Animate não existir, ele acorda o device
-// 150 vezes por botão pra desenhar o mesmo frame.
+// O modo ativo custa acordadas e entrega animação. Este teste mede a troca
+// com número, pra que ligar ou desligar seja decisão informada e não gosto.
 //
-// Este teste mede o custo dos dois jeitos. Ele não julga: serve pra que a
-// decisão de ligar ou desligar o modo ativo seja tomada com número.
-func TestCustoDoModoAtivoSemAnimacao(t *testing.T) {
+// Enquanto não havia animação, ele entregava ZERO redesenho a mais e era
+// custo puro — foi por isso que ficou desligado por um tempo.
+func TestCustoDoModoAtivo(t *testing.T) {
 	medir := func(duracaoAtiva time.Duration) (sonos, shows int) {
 		b := nova(t, func(c *Config) { c.DuracaoAtiva = duracaoAtiva })
 		for _, h := range []int{7, 12, 13, 19, 22} {
@@ -514,8 +512,10 @@ func TestCustoDoModoAtivoSemAnimacao(t *testing.T) {
 	t.Logf("custo: %d acordadas a mais por dia, %d redesenhos a mais",
 		comAtivo-semAtivo, showsCom-showsSem)
 
-	if showsCom > showsSem+len([]int{7, 12, 13, 19, 22}) {
-		t.Errorf("o modo ativo gerou %d redesenhos a mais: já tem animação?",
-			showsCom-showsSem)
+	// Agora que o bicho respira, o modo ativo TEM que render mais quadros.
+	// Se parar de render, ele voltou a ser custo puro.
+	if showsCom <= showsSem {
+		t.Errorf("o modo ativo gerou %d redesenhos e o desligado %d: "+
+			"as acordadas extras não estão desenhando nada", showsCom, showsSem)
 	}
 }

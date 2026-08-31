@@ -41,14 +41,13 @@ type Config struct {
 
 	// Ocioso é de quanto em quanto tempo o device acorda sem ninguém mexer.
 	Ocioso time.Duration
-	// DuracaoAtiva e PassoAtivo: depois de um botão o device fica acordando
-	// rápido por um tempo. É o que vai sustentar a animação do docs/06
-	// (10 fps por 15 s quando o dono interage).
+	// DuracaoAtiva e PassoAtivo: depois de um botão o device acorda rápido
+	// por um tempo pra animar. São os 10 fps por 15 s do docs/06.
 	//
-	// DuracaoAtiva zero desliga o modo ativo, e é o PADRÃO hoje: sem
-	// ui.Animate, essas acordadas desenham o mesmo frame. Medido em
-	// TestCustoDoModoAtivoSemAnimacao: 750 acordadas a mais por dia pra
-	// ZERO redesenho a mais. Liga junto com a animação, não antes.
+	// Ficou DESLIGADO enquanto não havia animação: 750 acordadas a mais por
+	// dia pra desenhar o mesmo quadro. Agora que o ui respira, elas desenham
+	// quadros diferentes e o bicho reage ao toque em vez de ficar parado.
+	// Zero continua desligando, pra quem quiser priorizar bateria.
 	DuracaoAtiva time.Duration
 	PassoAtivo   time.Duration
 
@@ -65,8 +64,8 @@ func Padrao() Config {
 	return Config{
 		Tuning:         sim.DefaultTuning(),
 		Ocioso:         5 * time.Minute,
-		DuracaoAtiva:   0,                      // ver o comentário no campo
-		PassoAtivo:     100 * time.Millisecond, // 10 fps, quando ligar
+		DuracaoAtiva:   15 * time.Second,       // ver o comentário no campo
+		PassoAtivo:     100 * time.Millisecond, // 10 fps
 		IntervaloSync:  12 * time.Hour,         // 1 a 2x por dia, o wifi come bateria
 		BateriaCritica: 15,
 		// Contador, não aleatório: o Padrao existe pra teste e pra bancada.
@@ -89,7 +88,10 @@ type Loop struct {
 	vista  sim.View
 	fila   *input.Fila
 
-	fimAtivo      time.Time
+	fimAtivo time.Time
+	// quadro avança só no modo ativo; fora dele volta a zero, que é a pose
+	// parada que as telas douradas travam.
+	quadro        int
 	proxSync      time.Time
 	desenhou      bool
 	avisouBateria bool
@@ -314,19 +316,30 @@ func (l *Loop) sincroniza() error {
 	return l.st.MarkSynced(enviados)
 }
 
-// desenha só quando o que o DONO enxerga mudou.
+// desenha só quando o que o DONO enxerga mudou, OU quando o bicho está
+// animando.
 //
 // A comparação é sobre sim.View, não sobre sim.State: a tela mostra atributo
 // em 0..100, então decaimento que não move nenhum desses inteiros é
 // invisível. Comparar o State cru redesenharia a cada tick, e desenhar é o
 // que gasta bateria.
+//
+// No modo ativo a regra inverte: ali o objetivo É redesenhar, porque o bicho
+// respira. Fora dele o quadro volta a zero, que é a pose parada.
 func (l *Loop) desenha(agora time.Time) {
 	v := sim.Project(l.estado, agora, l.cfg.Tuning)
-	if l.desenhou && v == l.vista {
+	animando := agora.Before(l.fimAtivo)
+
+	if animando {
+		l.quadro++
+	} else {
+		l.quadro = 0
+	}
+	if !animando && l.desenhou && v == l.vista {
 		return
 	}
 	l.vista = v
 	l.desenhou = true
-	ui.Render(l.tela.Framebuffer(), v)
+	ui.RenderQuadro(l.tela.Framebuffer(), v, l.quadro)
 	_ = l.tela.Show()
 }
