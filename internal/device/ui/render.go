@@ -10,26 +10,36 @@ import (
 	"github.com/ale/fera/internal/sim"
 )
 
-// Layout de 128x64. Bicho grande à esquerda, os quatro atributos à direita.
+// Layout de 128x64: o bicho toma a metade esquerda inteira, os quatro
+// atributos ocupam a direita.
 //
-// Quatro é o teto do que cabe aqui e do que um humano equilibra, que é
-// exatamente o argumento do sim-core pra não existir um quinto atributo: a
-// tela é a restrição de design, não uma consequência dela.
+// A primeira versão dava 32x32 ao bicho — 12% da tela — e espremia quatro
+// barras com rótulo e dois textos em volta. O bicho não estava só feio, estava
+// pequeno demais pra ter desenho. A referência é o golfinho do Flipper Zero,
+// que roda na mesma tela de 128x64 e dá quase tudo pra criatura.
+//
+// Quatro atributos é o teto do que cabe e do que um humano equilibra, que é
+// exatamente o argumento do sim-core pra não existir um quinto: a tela é a
+// restrição de design, não uma consequência dela.
 const (
 	Largura = 128
 	Altura  = 64
 
-	escalaBicho = 1 // arte nativa em 32x32; ver internal/device/ui/sprites.go
-	bichoX      = 4
-	bichoY      = 14
+	escalaBicho = 1 // arte nativa em 64x64; ver internal/device/ui/sprites.go
+	bichoX      = 0
+	bichoY      = 0
 
-	rotuloX   = 40
-	valorX    = 54
-	barraX    = 70
-	barraW    = 54
+	rotuloX   = 66
+	barraX    = 80
+	barraW    = 46
 	barraH    = 5
-	primeiraY = 8
+	primeiraY = 3
 	passoY    = 12
+
+	// O nome do estágio e do traço vão embaixo das barras, do lado direito.
+	textoX   = 66
+	estagioY = 51
+	tracoY   = 58
 )
 
 // Buffer de formatação, alocado uma vez. Nenhum make dentro do Render: em
@@ -47,8 +57,8 @@ func Render(b *display.Buffer, v sim.View) {
 	b.Clear()
 	b.BlitScaled(bichoX, bichoY, SpriteDoEstagio(v.Stage), escalaBicho)
 
-	DrawText(b, bichoX, 2, NomeDoEstagio(v.Stage))
-	DrawText(b, bichoX, Altura-7, NomeDoTraco(v.Trait))
+	DrawText(b, textoX, estagioY, NomeDoEstagio(v.Stage))
+	DrawText(b, textoX, tracoY, NomeDoTraco(v.Trait))
 
 	atributos := [4]struct {
 		rotulo string
@@ -59,10 +69,12 @@ func Render(b *display.Buffer, v sim.View) {
 		{"SAU", v.Stats.Saude},
 		{"VIN", v.Stats.Vinculo},
 	}
+	// Rótulo e barra, sem o número. Com 62 px de largura não cabem os três, e
+	// o número era precisão redundante: a barra tem 46 px pra 100 pontos, ou
+	// seja, cada pixel já vale ~2 pontos.
 	for i, a := range atributos {
 		y := primeiraY + int16(i)*passoY
 		DrawText(b, rotuloX, y, a.rotulo)
-		DrawBytes(b, valorX, y, itoa(numBuf[:0], int32(sim.Pct(a.valor))))
 		barra(b, barraX, y, a.valor)
 	}
 }

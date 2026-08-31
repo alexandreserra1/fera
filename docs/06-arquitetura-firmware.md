@@ -116,6 +116,46 @@ Ele recebe `sim.View` e não `sim.State` porque a tela mostra o bicho AGORA,
 com o decaimento do tempo parado já aplicado. O loop faz `Project` e passa o
 resultado. Ver a separação Fold/Project no `docs/01`.
 
+### O bicho ocupa metade da tela, e a arte tem três tons
+
+A primeira versão dava 32x32 ao bicho: **12% da tela**, com quatro barras
+rotuladas e dois textos espremidos em volta. Ele não estava só feio, estava
+pequeno demais pra ter desenho.
+
+A referência é o golfinho do Flipper Zero, que roda na MESMA tela de 128x64 e
+dá quase tudo pra criatura. Hoje o bicho é 64x64 na metade esquerda, e as
+barras perderam o número (sobra a barra, que com 46 px pra 100 pontos já vale
+~2 pontos por pixel).
+
+A arte tem **três tons**, não dois:
+
+    '#'  sólido
+    ':'  dither em xadrez, que o olho lê como cinza
+    '.'  vazio
+
+Um bit por pixel dá dois tons; o xadrez dá o terceiro de graça, e é o que
+separa pixel art de silhueta preenchida. Sem ele o bicho é mancha preta com
+buracos, que foi exatamente o problema das duas primeiras versões.
+
+Custo medido, `tinygo build -size -target=xiao-esp32s3 ./cmd/firmware`:
+
+| arte | flash | RAM |
+|---|---|---|
+| 32x32 | 137937 B | 56468 B |
+| 64x64 | 137937 B | 63652 B |
+
++7,2 KB de RAM, de 512 KB. A arte é a identidade visual do projeto.
+
+### Sobre usar arte de terceiro
+
+`cmd/import-sprite` converte PNG na arte ASCII do `sprites.go`. Existe pra que
+pack CC0 de 1-bit entre sem ninguém redesenhar pixel a pixel.
+
+Uma lição de tentar: **arte 1-bit tem que ser desenhada na resolução final,
+não reduzida até ela.** Converter um retrato de 46x49 cheio de detalhe fino
+pra 32x32 produz ruído, não desenho. O importador serve pra arte que já nasceu
+no tamanho certo.
+
 ### Golden em ASCII, não em PNG (correção da v1 deste doc)
 
 Este doc pedia PNG dourado. Um render errado em PNG produz um diff binário que

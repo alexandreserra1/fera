@@ -135,14 +135,20 @@ func TestNomesForaDaFaixaNaoQuebram(t *testing.T) {
 
 // A fonte e os bichos são empacotados no init a partir de arte em ASCII, o que
 // os coloca na RAM em vez da flash. A troca é deliberada (hex à mão é
-// ilegível e cheio de typo silencioso) mas precisa de teto: fonte inchando sem
+// ilegível e cheio de typo silencioso) mas precisa de teto: arte inchando sem
 // ninguém olhar é como orçamento de RAM morre.
 //
-// Medido com `tinygo build -size -target=xiao-esp32s3 ./cmd/simcheck`:
-// o device inteiro (sim + display + ui) usa 15392 B de RAM, contra os ~400 KB
-// livres do orçamento no docs/06. Este teste trava a parte que é da UI.
+// O teto subiu de 2 KB pra 4 KB quando a arte foi de 32x32 pra 64x64, e o
+// aumento foi MEDIDO, não estimado. `tinygo build -size -target=xiao-esp32s3
+// ./cmd/firmware` antes e depois:
+//
+//	32x32:  137937 flash / 56468 RAM
+//	64x64:  137937 flash / 63652 RAM   (+7,2 KB)
+//
+// São 63 KB dos 512 KB de SRAM do ESP32-S3, com o stack de WiFi (~50 KB) ainda
+// por cima. Cabe com folga, e a arte é a identidade visual do projeto.
 func TestOrcamentoDeRAMDaUI(t *testing.T) {
-	const teto = 2048
+	const teto = 4096
 
 	fonte := len(glifos) * alturaGlifo
 	var arte int

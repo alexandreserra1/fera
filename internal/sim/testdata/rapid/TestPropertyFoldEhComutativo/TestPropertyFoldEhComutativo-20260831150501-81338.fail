@@ -1,0 +1,77 @@
+# 2026/08/31 15:05:01.746746 [TestPropertyFoldEhComutativo] [rapid] draw n: 3
+# 2026/08/31 15:05:01.746750 [TestPropertyFoldEhComutativo] [rapid] draw off: 0
+# 2026/08/31 15:05:01.746750 [TestPropertyFoldEhComutativo] [rapid] draw kind: 1
+# 2026/08/31 15:05:01.746751 [TestPropertyFoldEhComutativo] [rapid] draw kcal: 0
+# 2026/08/31 15:05:01.746751 [TestPropertyFoldEhComutativo] [rapid] draw zone: 1
+# 2026/08/31 15:05:01.746752 [TestPropertyFoldEhComutativo] [rapid] draw min: 0
+# 2026/08/31 15:05:01.746753 [TestPropertyFoldEhComutativo] [rapid] draw off: 0
+# 2026/08/31 15:05:01.746753 [TestPropertyFoldEhComutativo] [rapid] draw kind: 1
+# 2026/08/31 15:05:01.746753 [TestPropertyFoldEhComutativo] [rapid] draw kcal: 0
+# 2026/08/31 15:05:01.746755 [TestPropertyFoldEhComutativo] [rapid] draw zone: 1
+# 2026/08/31 15:05:01.746756 [TestPropertyFoldEhComutativo] [rapid] draw min: 0
+# 2026/08/31 15:05:01.746756 [TestPropertyFoldEhComutativo] [rapid] draw off: 0
+# 2026/08/31 15:05:01.746757 [TestPropertyFoldEhComutativo] [rapid] draw kind: 1
+# 2026/08/31 15:05:01.746757 [TestPropertyFoldEhComutativo] [rapid] draw kcal: 0
+# 2026/08/31 15:05:01.746757 [TestPropertyFoldEhComutativo] [rapid] draw zone: 1
+# 2026/08/31 15:05:01.746758 [TestPropertyFoldEhComutativo] [rapid] draw min: 0
+# 2026/08/31 15:05:01.746759 [TestPropertyFoldEhComutativo] [rapid] draw swap: 0
+# 2026/08/31 15:05:01.746760 [TestPropertyFoldEhComutativo] [rapid] draw swap: 0
+# 2026/08/31 15:05:01.746760 [TestPropertyFoldEhComutativo] ordem mudou o resultado
+#  got: {PetID:pet1 SchemaVer:3 Stats:{Vigor:5000 Animo:5000 Saude:6200 Vinculo:1000} Stage:0 Trait:0 Growth:20 LastAtUnix:1787378400 LastID:AC LastEncAtUnix:0 CarrySec:0}
+# want: {PetID:pet1 SchemaVer:3 Stats:{Vigor:5000 Animo:5000 Saude:5800 Vinculo:1000} Stage:0 Trait:0 Growth:30 LastAtUnix:1787378400 LastID:AC LastEncAtUnix:0 CarrySec:0}
+# 
+v0.4.8#14032712904677416563
+0x0
+0x38e38e38e38e4
+0x3
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0

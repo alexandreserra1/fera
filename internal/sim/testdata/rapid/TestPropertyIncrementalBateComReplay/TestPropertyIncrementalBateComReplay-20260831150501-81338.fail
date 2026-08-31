@@ -1,0 +1,73 @@
+# 2026/08/31 15:05:01.781038 [TestPropertyIncrementalBateComReplay] [rapid] draw n: 3
+# 2026/08/31 15:05:01.781041 [TestPropertyIncrementalBateComReplay] [rapid] draw off: 1
+# 2026/08/31 15:05:01.781041 [TestPropertyIncrementalBateComReplay] [rapid] draw kind: 1
+# 2026/08/31 15:05:01.781042 [TestPropertyIncrementalBateComReplay] [rapid] draw kcal: 0
+# 2026/08/31 15:05:01.781042 [TestPropertyIncrementalBateComReplay] [rapid] draw zone: 1
+# 2026/08/31 15:05:01.781043 [TestPropertyIncrementalBateComReplay] [rapid] draw min: 0
+# 2026/08/31 15:05:01.781043 [TestPropertyIncrementalBateComReplay] [rapid] draw off: 1
+# 2026/08/31 15:05:01.781043 [TestPropertyIncrementalBateComReplay] [rapid] draw kind: 1
+# 2026/08/31 15:05:01.781044 [TestPropertyIncrementalBateComReplay] [rapid] draw kcal: 0
+# 2026/08/31 15:05:01.781045 [TestPropertyIncrementalBateComReplay] [rapid] draw zone: 1
+# 2026/08/31 15:05:01.781045 [TestPropertyIncrementalBateComReplay] [rapid] draw min: 0
+# 2026/08/31 15:05:01.781045 [TestPropertyIncrementalBateComReplay] [rapid] draw off: 0
+# 2026/08/31 15:05:01.781046 [TestPropertyIncrementalBateComReplay] [rapid] draw kind: 1
+# 2026/08/31 15:05:01.781046 [TestPropertyIncrementalBateComReplay] [rapid] draw kcal: 0
+# 2026/08/31 15:05:01.781046 [TestPropertyIncrementalBateComReplay] [rapid] draw zone: 1
+# 2026/08/31 15:05:01.781047 [TestPropertyIncrementalBateComReplay] [rapid] draw min: 0
+# 2026/08/31 15:05:01.781048 [TestPropertyIncrementalBateComReplay] [rapid] draw passo: 3
+# 2026/08/31 15:05:01.781048 [TestPropertyIncrementalBateComReplay] fold em pedaços divergiu do fold inteiro
+#  incr: {PetID:pet1 SchemaVer:3 Stats:{Vigor:5000 Animo:5000 Saude:5800 Vinculo:1000} Stage:0 Trait:0 Growth:30 LastAtUnix:1787378401 LastID:AB LastEncAtUnix:0 CarrySec:1}
+# want: {PetID:pet1 SchemaVer:3 Stats:{Vigor:5000 Animo:5000 Saude:6200 Vinculo:1000} Stage:0 Trait:0 Growth:20 LastAtUnix:1787378401 LastID:AB LastEncAtUnix:0 CarrySec:1}
+# 
+v0.4.8#16880855642185885939
+0x0
+0x38e38e38e38e4
+0x3
+0x0
+0x0
+0x1
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x1
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x0
+0x38e38e38e38e4
+0x2
