@@ -1,4 +1,4 @@
-.PHONY: test cover lint check check-all device tidy vectors frames telas bicho bicho-api tamanho web wasm
+.PHONY: test cover lint check check-all device tidy vectors frames telas bicho bicho-api tamanho web wasm up down
 
 # Precisa de Docker: internal/repo sobe um Postgres de verdade com
 # testcontainers. Mockar pgx testaria o mock, não o ON CONFLICT.
@@ -47,6 +47,13 @@ bicho:
 # O mesmo device, sincronizando de verdade. Precisa da API de pé (ver README).
 bicho-api:
 	go run ./cmd/feradev -velocidade=86400 -api=http://localhost:8080
+
+# Sobe API e banco com as migrações aplicadas.
+up:
+	docker compose up --build
+
+down:
+	docker compose down -v
 
 # A FERA no navegador: o mesmo sim, ui e display compilados pra WASM.
 web:

@@ -295,6 +295,7 @@ func novoRouter(svc *fakeSvc) http.Handler {
 		fakeAuth{token: tokenDoContrato, petID: petDoContrato},
 		func() time.Time { return agora },
 		nil,
+		Limite{}, // desligado: estes testes exercitam contrato, não cota
 	)
 }
 

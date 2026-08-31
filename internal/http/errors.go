@@ -27,6 +27,7 @@ const (
 	codeInvalidPetID = "invalid_pet_id"
 	codeInvalidQuery = "invalid_query"
 	codeUnauthorized = "unauthorized"
+	codeRateLimit    = "rate_limited"
 	codeNotFound     = "not_found"
 	codeInternal     = "internal"
 )

@@ -115,6 +115,7 @@ func servidorReal(t *testing.T, token string) (*httptest.Server, *servicoReal) {
 		authReal{token: token, deviceID: "dev-1", agora: agora},
 		agora,
 		nil,
+		httpapi.Limite{}, // desligado: aqui se testa o contrato, não a cota
 	))
 	t.Cleanup(srv.Close)
 	return srv, svc

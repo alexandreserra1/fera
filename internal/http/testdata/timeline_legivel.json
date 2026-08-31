@@ -1,0 +1,68 @@
+{
+  "name": "timeline devolve o histórico em texto legível (datas dentro da janela de 24h da borda)",
+  "seed": [
+    {
+      "id": "01JA",
+      "kind": "effort",
+      "at": "2026-08-22T07:00:00Z",
+      "payload": {
+        "kcal": 420,
+        "zone": 3
+      }
+    },
+    {
+      "id": "01JB",
+      "kind": "sleep",
+      "at": "2026-08-22T23:00:00Z",
+      "payload": {
+        "minutes": 430
+      }
+    },
+    {
+      "id": "01JC",
+      "kind": "interact",
+      "at": "2026-08-22T20:00:00Z",
+      "payload": {}
+    },
+    {
+      "id": "01JD",
+      "kind": "encounter",
+      "at": "2026-08-23T06:00:00Z",
+      "payload": {
+        "peer_id": "01JPEER"
+      }
+    }
+  ],
+  "method": "GET",
+  "path": "/v1/pets/11111111-1111-1111-1111-111111111111/timeline",
+  "status": 200,
+  "response": {
+    "cursor": 4,
+    "items": [
+      {
+        "id": "01JA",
+        "at": "2026-08-22T07:00:00Z",
+        "kind": "effort",
+        "summary": "treino de 420 kcal na zona 3"
+      },
+      {
+        "id": "01JB",
+        "at": "2026-08-22T23:00:00Z",
+        "kind": "sleep",
+        "summary": "7h10 de sono"
+      },
+      {
+        "id": "01JC",
+        "at": "2026-08-22T20:00:00Z",
+        "kind": "interact",
+        "summary": "você deu atenção"
+      },
+      {
+        "id": "01JD",
+        "at": "2026-08-23T06:00:00Z",
+        "kind": "encounter",
+        "summary": "encontrou outra FERA"
+      }
+    ]
+  }
+}

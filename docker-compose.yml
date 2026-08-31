@@ -1,0 +1,50 @@
+# Sobe a FERA inteira: `docker compose up`.
+#
+# As migrações NÃO rodam sozinhas no boot da API (o data-layer proíbe: migração
+# automática em boot é como se perde banco numa madrugada). Elas rodam num
+# serviço próprio que termina, e a API só sobe depois dele.
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: fera
+      POSTGRES_PASSWORD: fera
+      POSTGRES_DB: fera
+    # Porta configurável: máquina de dev costuma já ter um Postgres.
+    #   FERA_PORT_DB=5433 docker compose up
+    ports: ["${FERA_PORT_DB:-5432}:5432"]
+    volumes: ["fera-db:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fera -d fera"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  migrate:
+    image: postgres:16-alpine
+    depends_on:
+      db: { condition: service_healthy }
+    volumes: ["./migrations:/migrations:ro"]
+    environment:
+      PGPASSWORD: fera
+    # Aplica em ordem e para no primeiro erro. Rodar de novo em banco já
+    # migrado falha, o que é melhor que aplicar duas vezes em silêncio.
+    command: >
+      sh -c 'for m in /migrations/*.sql; do
+               echo "aplicando $$m";
+               psql -h db -U fera -d fera -v ON_ERROR_STOP=1 -f "$$m" || exit 1;
+             done'
+
+  api:
+    build: .
+    depends_on:
+      db: { condition: service_healthy }
+      migrate: { condition: service_completed_successfully }
+    environment:
+      FERA_DSN: postgres://fera:fera@db:5432/fera?sslmode=disable
+    # Idem: FERA_PORT=8090 docker compose up
+    ports: ["${FERA_PORT:-8080}:8080"]
+    command: ["-addr=:8080"]
+
+volumes:
+  fera-db:

@@ -160,3 +160,39 @@ func TestPetIDTortoParaAntesDoPgx(t *testing.T) {
 		t.Errorf("code = %q, esperado %q", body.Error.Code, codeInvalidPetID)
 	}
 }
+
+// A timeline é o histórico legível do api-contract. O texto é o único lugar
+// do projeto que existe pra ser lido por gente, então ele é testado por fora
+// dos arquivos de contrato também: número redondo, plural certo, e nada de
+// "1 minutos".
+func TestResumoDaTimelineEhLegivel(t *testing.T) {
+	casos := []struct {
+		nome string
+		ev   sim.Event
+		want string
+	}{
+		{"esforço", sim.Event{Kind: sim.KindEffort, Kcal: 420, Zone: 3}, "treino de 420 kcal na zona 3"},
+		{"esforço sem zona", sim.Event{Kind: sim.KindEffort, Kcal: 300}, "treino de 300 kcal"},
+		{"sono redondo", sim.Event{Kind: sim.KindSleep, Minutes: 480}, "8h de sono"},
+		{"sono quebrado", sim.Event{Kind: sim.KindSleep, Minutes: 430}, "7h10 de sono"},
+		{"sono com minuto único", sim.Event{Kind: sim.KindSleep, Minutes: 421}, "7h01 de sono"},
+		{"sono curto", sim.Event{Kind: sim.KindSleep, Minutes: 45}, "45min de sono"},
+		{"botão", sim.Event{Kind: sim.KindInteract}, "você deu atenção"},
+		{"encontro", sim.Event{Kind: sim.KindEncounter, PeerID: "p"}, "encontrou outra FERA"},
+	}
+	for _, c := range casos {
+		if got := resumo(c.ev); got != c.want {
+			t.Errorf("%s: %q, esperado %q", c.nome, got, c.want)
+		}
+	}
+}
+
+// Kind que o sim ganhar e a borda não souber descrever não pode virar linha
+// em branco na timeline do dono.
+func TestTodoKindTemResumo(t *testing.T) {
+	for k := sim.KindEffort; k <= sim.KindEncounter; k++ {
+		if r := resumo(sim.Event{Kind: k}); r == "" {
+			t.Errorf("kind %s (%d) não tem texto na timeline", sim.KindName(k), k)
+		}
+	}
+}

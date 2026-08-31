@@ -66,6 +66,7 @@ func run() error {
 		devices,
 		time.Now,
 		pool,
+		httpapi.LimitePadrao(),
 	)
 
 	srv := &http.Server{

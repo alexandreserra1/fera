@@ -59,11 +59,11 @@ cmd/simcheck/             prova que o core linka no Xtensa. Não é firmware.
 ```
 
 ```bash
-# subir a API local
-docker run -d --rm --name fera-pg -e POSTGRES_PASSWORD=fera -e POSTGRES_USER=fera \
-  -e POSTGRES_DB=fera -p 5432:5432 postgres:16-alpine
-for m in migrations/*.sql; do docker exec -i fera-pg psql -U fera -d fera < $m; done
-FERA_DSN='postgres://fera:fera@localhost:5432/fera?sslmode=disable' go run ./cmd/api
+make up          # API + Postgres + migrações, em um comando
+make down        # derruba e apaga o volume
+
+# se a 8080 já estiver ocupada:
+FERA_PORT=8090 docker compose up --build
 ```
 
 ```bash
@@ -81,6 +81,7 @@ make vectors    # regenera os golden vectors (ato deliberado, veja sim-core)
 make bicho      # roda a FERA no terminal, offline (a/i/m/b/q)
 make bicho-api  # o mesmo, sincronizando contra uma API em localhost:8080
 make tamanho    # quanto o programa do device ocupa no ESP32-S3
+make web        # a FERA no navegador (WASM), em http://localhost:8000
 make telas      # desenha as telas do device no terminal
 make frames     # regenera as telas douradas
 ```

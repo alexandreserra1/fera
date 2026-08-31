@@ -120,18 +120,12 @@ func (h *PetHandler) ListEvents(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	since, err := intDaQuery(r, "since", 0)
-	if err != nil || since < 0 {
-		writeErr(w, http.StatusBadRequest, codeInvalidQuery, "since inválido")
-		return
-	}
-	limit, err := intDaQuery(r, "limit", maxEventos)
-	if err != nil || limit < 0 {
-		writeErr(w, http.StatusBadRequest, codeInvalidQuery, "limit inválido")
+	since, limit, ok := paginacao(w, r)
+	if !ok {
 		return
 	}
 
-	evs, cursor, err := h.svc.Events(r.Context(), petID, since, int(limit))
+	evs, cursor, err := h.svc.Events(r.Context(), petID, since, limit)
 	if err != nil {
 		if status, code := statusFor(err); status != 0 {
 			writeErr(w, status, code, "não foi possível ler os eventos")
@@ -149,4 +143,43 @@ func intDaQuery(r *http.Request, nome string, padrao int64) (int64, error) {
 		return padrao, nil
 	}
 	return strconv.ParseInt(v, 10, 64)
+}
+
+// Timeline é o histórico legível. Mesma paginação por cursor do pull: quem
+// mostra histórico numa tela rola pra trás, e rolar exige cursor estável.
+func (h *PetHandler) Timeline(w http.ResponseWriter, r *http.Request) {
+	petID, ok := petIDDaURL(w, r)
+	if !ok {
+		return
+	}
+	since, limit, ok := paginacao(w, r)
+	if !ok {
+		return
+	}
+
+	evs, cursor, err := h.svc.Events(r.Context(), petID, since, limit)
+	if err != nil {
+		if status, code := statusFor(err); status != 0 {
+			writeErr(w, status, code, "não foi possível ler o histórico")
+			return
+		}
+		writeInternal(w, r, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, timelineResponse{Items: toTimeline(evs), Cursor: cursor})
+}
+
+// paginacao lê since e limit, que o pull e a timeline compartilham.
+func paginacao(w http.ResponseWriter, r *http.Request) (int64, int, bool) {
+	since, err := intDaQuery(r, "since", 0)
+	if err != nil || since < 0 {
+		writeErr(w, http.StatusBadRequest, codeInvalidQuery, "since inválido")
+		return 0, 0, false
+	}
+	limit, err := intDaQuery(r, "limit", maxEventos)
+	if err != nil || limit < 0 {
+		writeErr(w, http.StatusBadRequest, codeInvalidQuery, "limit inválido")
+		return 0, 0, false
+	}
+	return since, int(limit), true
 }

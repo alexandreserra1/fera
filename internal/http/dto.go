@@ -10,6 +10,7 @@ package httpapi
 
 import (
 	"fmt"
+	"strconv"
 	"time"
 
 	"github.com/ale/fera/internal/sim"
@@ -168,4 +169,67 @@ func fromDomain(evs []sim.Event) []eventDTO {
 		})
 	}
 	return out
+}
+
+type timelineResponse struct {
+	Items  []timelineItem `json:"items"`
+	Cursor int64          `json:"cursor"`
+}
+
+type timelineItem struct {
+	ID      string    `json:"id"`
+	At      time.Time `json:"at"`
+	Kind    string    `json:"kind"`
+	Summary string    `json:"summary"`
+}
+
+// A timeline é o mesmo log de eventos, em texto. Não é projeção nova nem
+// tabela nova: o docs/02 reserva "projeção" pra leitura que exigiria join
+// (ranking, feed social), e histórico de UM pet é filtro por chave, que o
+// repo já faz por cursor.
+func toTimeline(evs []sim.Event) []timelineItem {
+	itens := make([]timelineItem, 0, len(evs))
+	for _, ev := range evs {
+		itens = append(itens, timelineItem{
+			ID: ev.ID, At: ev.At.UTC(),
+			Kind: sim.KindName(ev.Kind), Summary: resumo(ev),
+		})
+	}
+	return itens
+}
+
+// resumo é o único texto do projeto escrito pra ser lido por gente. Fica na
+// borda, não no sim: o núcleo não sabe português nem deve saber.
+func resumo(ev sim.Event) string {
+	switch ev.Kind {
+	case sim.KindEffort:
+		s := "treino de " + strconv.Itoa(int(ev.Kcal)) + " kcal"
+		if ev.Zone > 0 {
+			s += " na zona " + strconv.Itoa(int(ev.Zone))
+		}
+		return s
+	case sim.KindSleep:
+		return duracaoEmTexto(int(ev.Minutes)) + " de sono"
+	case sim.KindInteract:
+		return "você deu atenção"
+	case sim.KindEncounter:
+		return "encontrou outra FERA"
+	}
+	return ""
+}
+
+// duracaoEmTexto escreve minutos do jeito que alguém falaria: "8h", "7h10",
+// "45min". Nunca "7h5", que se lê errado, nem "480min".
+func duracaoEmTexto(min int) string {
+	h, m := min/60, min%60
+	switch {
+	case h == 0:
+		return strconv.Itoa(m) + "min"
+	case m == 0:
+		return strconv.Itoa(h) + "h"
+	case m < 10:
+		return strconv.Itoa(h) + "h0" + strconv.Itoa(m)
+	default:
+		return strconv.Itoa(h) + "h" + strconv.Itoa(m)
+	}
 }

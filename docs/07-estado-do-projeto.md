@@ -14,11 +14,13 @@ Os outros docs dizem como o sistema **deve** ser; este diz como ele **está**.
 | 2 | Firmware que roda o sim offline e desenha na tela | **roda no Mac**, falta driver e placa |
 | 3 | Sync device ↔ API | **feito**: push assinado sobre transporte próprio |
 | 4 | BLE peer-to-peer | não começou, e há risco de plataforma |
-| 5 | App Expo + Health/Strava | não começou |
+| 5 | App Expo + Health/Strava | a página web já roda o sim em WASM |
 
 O que roda hoje, de verdade:
 
 ```bash
+make up                   # API + Postgres + migrações, num comando
+make web                  # a FERA no navegador (WASM), em localhost:8000
 make bicho                # a FERA no terminal, offline
 make bicho-api            # a mesma FERA sincronizando contra a API
 make check-all            # lint + testes + cobertura + TinyGo + link no Xtensa
@@ -199,12 +201,52 @@ Alvo pro dono constante (3x/semana, ~13 esforços/mês), com os limiares
 regenerados. Os dois mecanismos fizeram exatamente o trabalho deles: falharam
 e obrigaram a reconhecer a mudança em vez de deixá-la passar em silêncio.
 
+## Auditoria contra os docs (31/08/2026)
+
+Varredura de tudo que os `.md` e as skills prescrevem, conferido contra o
+código e não de memória.
+
+**Cumprido e verificado:** os cinco invariantes; nenhuma interface com mais de
+4 métodos; nenhum `panic` fora de `main`; nenhum pacote `utils`/`helpers`/
+`models`/`pkg`; `unnest` no append; nunca `UPDATE` em `events`; o `WHERE
+folded_seq` no upsert; pool com lifetime; otter e singleflight; backoff com
+jitter; formato de erro único; validação na borda sem lib de tag; chave de
+contexto tipada.
+
+**Corrigido nesta auditoria:**
+
+- `GET /v1/pets/{id}/timeline`, o último endpoint do `api-contract` que
+  faltava. É o mesmo log por cursor, em texto legível: não é projeção nova,
+  porque histórico de UM pet é filtro por chave e não join.
+- Rate limit por device (`x/time/rate` + otter com TTL), como o
+  `resilience-cache` prescreve. Por device e não global: global faria um
+  device com retry maluco derrubar o bicho de todo mundo.
+- `Dockerfile` + `docker-compose.yml`: imagem distroless de 22 MB, migrações
+  num serviço próprio que termina antes da API subir (o `data-layer` proíbe
+  migração automática no boot). Portas configuráveis, porque porta fixa quebra
+  na máquina de quem já usa a 8080.
+- Dois `.md` órfãos removidos da raiz: uma cópia velha do `06` com as
+  afirmações que já foram corrigidas no `docs/`, e uma duplicata do skill de
+  firmware. Doc velho contradizendo o novo é pior que doc faltando.
+
+**Desvios conscientes, não esquecimentos:**
+
+| não feito | por quê |
+|---|---|
+| `internal/platform` | seria pacote de cerimônia: o cache mora no service, o clock é função injetada |
+| `tern` ou `goose` | ferramenta de migração pra três arquivos SQL aplicados num laço |
+| circuit breaker | o `resilience-cache` o reserva pra chamada a terceiro, e não há nenhuma |
+| particionamento de `events` | o `docs/02` já registrou: só quando houver volume que justifique |
+| `POST /v1/pets` | o `register` já cria o pet, por decisão de segurança |
+| OpenTelemetry | só vale quando houver deploy; o `docs/01` põe o Caddy na frente |
+
 ## Bugs que os testes pegaram, e o que cada um ensinou
 
 Vale registrar porque o padrão se repete.
 
 | Bug | Como apareceu |
 |---|---|
+| Teste de dentes dando falso negativo 4x | grep por `--- FAIL` perdia falha de COMPILAÇÃO; passei a checar o código de saída |
 | Sedentário evoluía igual ao atleta, contra o README | bancada de personas de balanceamento |
 | `Fold` descartava evento atrasado em silêncio | teste escrito pra reproduzir suspeita de leitura |
 | Registro da fila atravessando fronteira de setor | teste de **vida útil da flash**, escrito pra outra coisa |

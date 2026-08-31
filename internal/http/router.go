@@ -23,7 +23,7 @@ const (
 	timeoutIngest  = 15 * time.Second
 )
 
-func NewRouter(pets *PetHandler, devs *DeviceHandler, auth authenticator, agora func() time.Time, db Pinger) http.Handler {
+func NewRouter(pets *PetHandler, devs *DeviceHandler, auth authenticator, agora func() time.Time, db Pinger, limite Limite) http.Handler {
 	if agora == nil {
 		agora = time.Now
 	}
@@ -62,11 +62,16 @@ func NewRouter(pets *PetHandler, devs *DeviceHandler, auth authenticator, agora 
 	// NESTE pet. Ter token válido não é ter direito a qualquer pet_id.
 	r.Route("/v1/pets/{petID}", func(r chi.Router) {
 		r.Use(requireDevice(auth, agora))
+		// A ordem importa: limitar vem DEPOIS de autenticar, porque a cota é
+		// por device e antes da autenticação não se sabe quem é. Também evita
+		// gastar cota de um dono com requisição forjada por outro.
+		r.Use(rateLimit(limite))
 		r.Use(requireOwnPet)
 
 		r.With(middleware.Timeout(timeoutLeitura)).Get("/", pets.GetPet)
 		r.With(middleware.Timeout(timeoutIngest)).Post("/events", pets.IngestEvents)
 		r.With(middleware.Timeout(timeoutLeitura)).Get("/events", pets.ListEvents)
+		r.With(middleware.Timeout(timeoutLeitura)).Get("/timeline", pets.Timeline)
 	})
 
 	return r
