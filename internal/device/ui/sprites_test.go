@@ -36,46 +36,6 @@ func TestArteTemAsDimensoesDeclaradas(t *testing.T) {
 	}
 }
 
-// Bicho torto de um lado só é erro de digitação, não escolha de design.
-//
-// A exceção é declarada, não implícita: as linhas 7 e 8 do ovo são a rachadura,
-// e rachadura simétrica lê como faixa decorativa em vez de casca quebrando.
-// Assimetria nova em qualquer outro lugar continua sendo erro.
-func TestBichosSaoSimetricos(t *testing.T) {
-	// Hoje todos são simétricos: a costura do ovo virou uma fenda centralizada
-	// em vez de ziguezague. O mapa fica pro dia em que algum bicho for
-	// assimétrico DE PROPÓSITO, e o teste cobra que a exceção seja verdadeira.
-	assimetriaProposital := map[string]map[int]bool{}
-
-	for _, c := range []struct{ nome, arte string }{
-		{"ovo", arteOvo}, {"filhote", arteFilhote}, {"jovem", arteJovem},
-		{"adulto", arteAdulto}, {"veterano", arteVeterano},
-	} {
-		t.Run(c.nome, func(t *testing.T) {
-			for i, l := range strings.Split(strings.TrimSpace(c.arte), "\n") {
-				if assimetriaProposital[c.nome][i] {
-					if l == inverte(l) {
-						t.Errorf("linha %d está marcada como assimétrica mas é simétrica: "+
-							"tire a exceção", i)
-					}
-					continue
-				}
-				if l != inverte(l) {
-					t.Errorf("linha %d não é simétrica:\n  %s\n  %s", i, l, inverte(l))
-				}
-			}
-		})
-	}
-}
-
-func inverte(s string) string {
-	b := []byte(s)
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-	return string(b)
-}
-
 // Todo estágio do sim precisa de arte. Adicionar estágio novo sem desenhar o
 // bicho deixaria a tela vazia sem nenhum erro.
 func TestTodoEstagioTemSprite(t *testing.T) {
@@ -148,5 +108,75 @@ func TestOsTresTonsSaoDistintos(t *testing.T) {
 	}
 	if meio != 2 {
 		t.Errorf("linha de dither com %d de 4 acesos, esperado 2", meio)
+	}
+}
+
+// O teste de simetria que existia aqui foi APOSENTADO, não apagado por estar
+// vermelho. Ele pegava erro de digitação na arte escrita à mão; a arte agora
+// vem importada de fonte verificada (Kenney, CC0) com teste de ida e volta no
+// próprio cmd/import-sprite, e "typo" deixou de ser um modo de falha possível.
+// Mantê-lo significaria carregar uma lista de números de linha por bicho que
+// não protege nada.
+//
+// O modo de falha de HOJE é outro: pegar a célula errada do tilesheet. Um
+// off-by-one na grade traz meio bicho, ou o vizinho, ou espaço vazio. É isso
+// que os dois testes abaixo pegam.
+
+// Bicho colado numa borda é célula errada: o recorte pegou metade de um e
+// metade do vizinho.
+func TestBichoEstaCentradoNaArte(t *testing.T) {
+	for _, c := range []struct{ nome, arte string }{
+		{"ovo", arteOvo}, {"filhote", arteFilhote}, {"jovem", arteJovem},
+		{"adulto", arteAdulto}, {"veterano", arteVeterano},
+	} {
+		t.Run(c.nome, func(t *testing.T) {
+			linhas := strings.Split(strings.TrimSpace(c.arte), "\n")
+			esq, dir := int16(larguraSprite), int16(0)
+			for _, l := range linhas {
+				for x, ch := range l {
+					if ch == '#' || ch == ':' {
+						if int16(x) < esq {
+							esq = int16(x)
+						}
+						if int16(x) > dir {
+							dir = int16(x)
+						}
+					}
+				}
+			}
+			if esq > dir {
+				t.Fatal("arte vazia")
+			}
+			// as margens dos dois lados têm que ser parecidas
+			margemDir := int16(larguraSprite) - 1 - dir
+			if d := esq - margemDir; d > 6 || d < -6 {
+				t.Errorf("margens desiguais (%d à esquerda, %d à direita): "+
+					"o recorte pegou a célula errada do tilesheet?", esq, margemDir)
+			}
+		})
+	}
+}
+
+// Bicho tem que ocupar uma fatia razoável do quadro. Pouco demais é célula
+// vazia; demais é um tile de parede em vez de criatura.
+func TestBichoOcupaFatiaRazoavelDoQuadro(t *testing.T) {
+	total := int(larguraSprite) * int(alturaSprite)
+	for s := sim.StageOvo; s <= sim.StageVeterano; s++ {
+		sp := SpriteDoEstagio(s)
+		var acesos int
+		for y := int16(0); y < sp.H; y++ {
+			for x := int16(0); x < sp.W; x++ {
+				if sp.At(x, y) {
+					acesos++
+				}
+			}
+		}
+		pct := acesos * 100 / total
+		if pct < 10 {
+			t.Errorf("estágio %d ocupa só %d%% do quadro: célula vazia?", s, pct)
+		}
+		if pct > 70 {
+			t.Errorf("estágio %d ocupa %d%% do quadro: pegou um tile de bloco?", s, pct)
+		}
 	}
 }

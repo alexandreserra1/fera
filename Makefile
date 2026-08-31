@@ -1,4 +1,4 @@
-.PHONY: test cover lint check check-all device tidy vectors frames telas bicho bicho-api tamanho web wasm up down
+.PHONY: test cover lint check check-all device tidy vectors frames telas bicho bicho-api tamanho web wasm up down bichos-png
 
 # Precisa de Docker: internal/repo sobe um Postgres de verdade com
 # testcontainers. Mockar pgx testaria o mock, não o ON CONFLICT.
@@ -54,6 +54,12 @@ up:
 
 down:
 	docker compose down -v
+
+# Exporta os bichos como PNG ampliado, pra editar no Piskel/Pixilart/Aseprite.
+# Depois de editar, traga de volta com:
+#   go run ./cmd/import-sprite -in bicho.png -w 64 -h 64 -nome adulto
+bichos-png:
+	@go run ./cmd/export-sprite -out ./bichos -escala 8
 
 # A FERA no navegador: o mesmo sim, ui e display compilados pra WASM.
 web:

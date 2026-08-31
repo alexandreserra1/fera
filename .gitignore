@@ -7,6 +7,9 @@ c.out
 # artefato de build do WASM: refaça com `make wasm`
 web/fera.wasm
 
+# PNGs exportados pra editar (make bichos-png)
+/bichos/
+
 # binários compilados
 /api
 /feradev

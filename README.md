@@ -28,6 +28,19 @@ Comunidade que compra essa briga: maker/ESP32, open hardware, fitness tech, Go e
 As três primeiras aceitam bem qualquer coisa aberta e bem documentada. A quarta é onde
 mora a diferenciação.
 
+## Créditos de arte
+
+Os bichos vêm do [1-Bit Pack do Kenney](https://kenney.nl/assets/1-bit-pack),
+sob **CC0 1.0** (domínio público). CC0 não exige atribuição; o crédito está
+aqui porque é justo.
+
+A arte original é 16x16. O `cmd/import-sprite` amplia pra 64x64 com Scale2x
+(EPX), que preenche cantos internos a partir dos vizinhos — ampliar por
+repetição transformaria cada pixel num bloco e o bicho viraria Minecraft.
+
+Pra trocar um bicho: `make bichos-png`, edite no [Piskel](https://www.piskelapp.com),
+e traga de volta com `go run ./cmd/import-sprite -in novo.png -w 64 -h 64 -suavizar -nome adulto`.
+
 ## O que tem neste repo
 
 ```
