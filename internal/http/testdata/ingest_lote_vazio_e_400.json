@@ -1,0 +1,8 @@
+{
+  "name": "lote vazio é 400: não dá pra adivinhar a intenção",
+  "method": "POST",
+  "path": "/v1/pets/11111111-1111-1111-1111-111111111111/events",
+  "body": {"events": []},
+  "status": 400,
+  "response": {"error": {"code": "invalid_event", "message": "lote vazio"}}
+}

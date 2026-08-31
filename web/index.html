@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FERA</title>
+<style>
+  :root {
+    --fundo: #14161a;
+    --painel: #1c1f26;
+    --borda: #2b3039;
+    --texto: #c9d1d9;
+    --fraco: #7d8590;
+    --lcd-fundo: #b6c1a8;
+    --lcd-pixel: #1a1f14;
+    --acento: #7ee787;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px;
+    background: var(--fundo); color: var(--texto);
+    font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+    display: flex; flex-direction: column; align-items: center; gap: 20px;
+  }
+  h1 { font-size: 18px; letter-spacing: .3em; margin: 0; color: var(--fraco); font-weight: 500; }
+
+  /* a "placa": moldura em volta da tela, pra lembrar que é um objeto físico */
+  .device {
+    background: var(--painel); border: 1px solid var(--borda);
+    border-radius: 18px; padding: 18px; box-shadow: 0 12px 32px #0008;
+  }
+  canvas {
+    display: block; image-rendering: pixelated;
+    background: var(--lcd-fundo); border-radius: 4px;
+    width: 640px; height: 320px; max-width: 100%;
+  }
+  .botoes { display: flex; gap: 10px; margin-top: 14px; justify-content: center; }
+  button {
+    background: #262b34; color: var(--texto); border: 1px solid var(--borda);
+    border-radius: 8px; padding: 9px 14px; cursor: pointer;
+    font: inherit; font-size: 13px; transition: .12s;
+  }
+  button:hover { background: #2f3540; border-color: #3d4450; }
+  button:active { transform: translateY(1px); }
+  button.principal { border-color: #2d5a35; color: var(--acento); }
+
+  .painel {
+    background: var(--painel); border: 1px solid var(--borda);
+    border-radius: 12px; padding: 16px 20px; width: 100%; max-width: 676px;
+  }
+  .linha { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .campo { color: var(--fraco); font-size: 12px; }
+  .campo b { color: var(--texto); font-weight: 500; }
+  label { color: var(--fraco); font-size: 12px; display: flex; align-items: center; gap: 8px; }
+  select { background: #262b34; color: var(--texto); border: 1px solid var(--borda);
+           border-radius: 6px; padding: 5px 8px; font: inherit; font-size: 12px; }
+  .nota { color: var(--fraco); font-size: 12px; max-width: 676px; text-align: center; }
+  .nota code { color: var(--texto); }
+</style>
+</head>
+<body>
+  <h1>F E R A</h1>
+
+  <div class="device">
+    <canvas id="tela"></canvas>
+    <div class="botoes">
+      <button class="principal" id="btTreino">treinar</button>
+      <button id="btInteragir">interagir</button>
+      <button id="btDormir">dormir</button>
+      <button id="btZerar">recomeçar</button>
+    </div>
+  </div>
+
+  <div class="painel">
+    <div class="linha" style="margin-bottom:14px">
+      <span class="campo">viver um mês como:</span>
+      <button id="rtSedentario">sedentário</button>
+      <button id="rtConstante">3x por semana</button>
+      <button id="rtAtleta">atleta</button>
+      <button id="rtSumiu">treina e some</button>
+    </div>
+    <div class="linha">
+      <span class="campo">tempo do bicho: <b id="relogio">—</b></span>
+      <span class="campo">eventos no log: <b id="nEventos">0</b></span>
+      <label>velocidade
+        <select id="velocidade">
+          <option value="60">1 min por segundo</option>
+          <option value="3600" selected>1 h por segundo</option>
+          <option value="21600">6 h por segundo</option>
+          <option value="86400">1 dia por segundo</option>
+        </select>
+      </label>
+      <label>treino
+        <select id="intensidade">
+          <option value="300,2">leve (300 kcal, zona 2)</option>
+          <option value="500,3" selected>moderado (500 kcal, zona 3)</option>
+          <option value="700,4">forte (700 kcal, zona 4)</option>
+          <option value="900,5">no talo (900 kcal, zona 5)</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <p class="nota">
+    Isto roda o <code>internal/sim</code>, o <code>internal/device/ui</code> e o
+    <code>internal/device/display</code> compilados pra WebAssembly — o mesmo
+    código que vai pro ESP32. A tela acima é o framebuffer de 128×64 do device,
+    pixel por pixel. O log de eventos fica no seu navegador; o estado nunca é
+    salvo, só derivado dele.
+    <br><br>
+    Os botões de rotina despejam um mês de eventos de uma vez. É a forma de
+    <em>ver</em> o balanceamento: clicar botão em tempo acelerado não dá pra
+    sentir, porque um treino leva 6 dias simulados pra decair e a 1 dia por
+    segundo isso são 6 segundos.
+  </p>
+
+<script src="wasm_exec.js"></script>
+<script src="fera.js"></script>
+</body>
+</html>

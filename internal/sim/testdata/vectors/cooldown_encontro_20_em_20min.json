@@ -1,0 +1,247 @@
+{
+  "name": "cooldown_encontro_20_em_20min",
+  "tuning": {
+    "VigorPorKcal": 6,
+    "SaudePorHoraSono": 240,
+    "AnimoPorHoraSono": 100,
+    "StrainPorZona": 400,
+    "AnimoPorInteracao": 600,
+    "VinculoPorInteracao": 400,
+    "VinculoPorEncontro": 900,
+    "AnimoPorEncontro": 300,
+    "DecaiVigorHora": 20,
+    "DecaiAnimoHora": 40,
+    "DecaiVinculoHora": 15,
+    "CooldownEncontro": 21600000000000,
+    "GrowthPorEvento": 10
+  },
+  "initial": {
+    "PetID": "pet1",
+    "SchemaVer": 3,
+    "Stats": {
+      "Vigor": 5000,
+      "Animo": 5000,
+      "Saude": 7000,
+      "Vinculo": 1000
+    },
+    "Stage": 0,
+    "Trait": 0,
+    "Growth": 0,
+    "LastAtUnix": 1787378400,
+    "LastID": "",
+    "LastEncAtUnix": 0,
+    "CarrySec": 0
+  },
+  "events": [
+    {
+      "ID": "EA",
+      "At": "2026-08-22T06:00:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EB",
+      "At": "2026-08-22T06:01:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EC",
+      "At": "2026-08-22T06:02:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "ED",
+      "At": "2026-08-22T06:03:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EE",
+      "At": "2026-08-22T06:04:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EF",
+      "At": "2026-08-22T06:05:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EG",
+      "At": "2026-08-22T06:06:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EH",
+      "At": "2026-08-22T06:07:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EI",
+      "At": "2026-08-22T06:08:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EJ",
+      "At": "2026-08-22T06:09:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EK",
+      "At": "2026-08-22T06:10:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EL",
+      "At": "2026-08-22T06:11:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EM",
+      "At": "2026-08-22T06:12:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EN",
+      "At": "2026-08-22T06:13:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EO",
+      "At": "2026-08-22T06:14:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EP",
+      "At": "2026-08-22T06:15:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "EQ",
+      "At": "2026-08-22T06:16:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "ER",
+      "At": "2026-08-22T06:17:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "ES",
+      "At": "2026-08-22T06:18:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    },
+    {
+      "ID": "ET",
+      "At": "2026-08-22T06:19:00Z",
+      "Kind": 4,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 0,
+      "PeerID": "p2"
+    }
+  ],
+  "now_unix": 1787382000,
+  "folded": {
+    "PetID": "pet1",
+    "SchemaVer": 3,
+    "Stats": {
+      "Vigor": 5000,
+      "Animo": 5300,
+      "Saude": 7000,
+      "Vinculo": 1900
+    },
+    "Stage": 0,
+    "Trait": 0,
+    "Growth": 10,
+    "LastAtUnix": 1787379540,
+    "LastID": "ET",
+    "LastEncAtUnix": 1787378400,
+    "CarrySec": 1140
+  },
+  "projected": {
+    "PetID": "pet1",
+    "Stats": {
+      "Vigor": 4980,
+      "Animo": 5260,
+      "Saude": 7000,
+      "Vinculo": 1885
+    },
+    "Stage": 0,
+    "Trait": 0,
+    "Growth": 10
+  }
+}

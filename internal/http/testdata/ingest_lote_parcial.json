@@ -1,0 +1,16 @@
+{
+  "name": "lote misturando conhecido e novo",
+  "seed": [
+    {"id": "01JA", "kind": "effort", "at": "2026-08-22T07:00:00Z", "payload": {"kcal": 420, "zone": 3}}
+  ],
+  "method": "POST",
+  "path": "/v1/pets/11111111-1111-1111-1111-111111111111/events",
+  "body": {
+    "events": [
+      {"id": "01JA", "kind": "effort",   "at": "2026-08-22T07:00:00Z", "payload": {"kcal": 420, "zone": 3}},
+      {"id": "01JB", "kind": "interact", "at": "2026-08-22T09:00:00Z", "payload": {}}
+    ]
+  },
+  "status": 200,
+  "response": {"accepted": 1, "duplicates": 1, "rejected": 0, "cursor": 2}
+}

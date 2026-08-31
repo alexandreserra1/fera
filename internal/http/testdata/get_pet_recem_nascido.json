@@ -1,0 +1,13 @@
+{
+  "name": "pet sem evento nenhum devolve o genesis",
+  "method": "GET",
+  "path": "/v1/pets/11111111-1111-1111-1111-111111111111",
+  "status": 200,
+  "response": {
+    "pet_id": "11111111-1111-1111-1111-111111111111",
+    "stage": "ovo",
+    "trait": "neutro",
+    "growth": 0,
+    "stats": {"vigor": 50, "animo": 50, "saude": 70, "vinculo": 10}
+  }
+}

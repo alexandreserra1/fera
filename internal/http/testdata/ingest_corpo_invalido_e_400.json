@@ -1,0 +1,8 @@
+{
+  "name": "JSON quebrado é 400 com código estável",
+  "method": "POST",
+  "path": "/v1/pets/11111111-1111-1111-1111-111111111111/events",
+  "raw_body": "{\"events\": [",
+  "status": 400,
+  "response": {"error": {"code": "invalid_body", "message": "corpo inválido"}}
+}

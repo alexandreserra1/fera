@@ -1,0 +1,13 @@
+-- 0003: chave de assinatura de requisição.
+--
+-- POR QUE: o crypto/tls do Go custa +372 KB de flash e +168 KB de RAM no
+-- ESP32-S3, e o stack de WiFi sozinho já consome 345 KB dos 512 KB de SRAM.
+-- Não cabe. O device passa a ASSINAR a requisição com BLAKE2s (+2,5 KB de
+-- flash, +672 B de RAM) em vez de mandar o token no fio. Ver docs/06.
+--
+-- sign_key é derivada do token com BLAKE2s, nunca é o token. Assim um dump de
+-- backup não entrega a credencial que o device usa pra tudo.
+--
+-- Fica NULL nos devices antigos: eles continuam autenticando por Bearer, que
+-- é o caminho do app. Os dois convivem de propósito.
+ALTER TABLE devices ADD COLUMN sign_key BYTEA;

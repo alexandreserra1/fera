@@ -1,0 +1,12 @@
+{
+  "name": "register é o único endpoint aberto e devolve 201 com o token",
+  "no_auth": true,
+  "method": "POST",
+  "path": "/v1/devices/register",
+  "status": 201,
+  "response": {
+    "device_id": "dev-1",
+    "pet_id": "11111111-1111-1111-1111-111111111111",
+    "token": "segredo"
+  }
+}

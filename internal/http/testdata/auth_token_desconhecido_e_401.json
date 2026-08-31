@@ -1,0 +1,8 @@
+{
+  "name": "token desconhecido dá a MESMA resposta que token ausente",
+  "token": "nao-sou-o-token",
+  "method": "GET",
+  "path": "/v1/pets/11111111-1111-1111-1111-111111111111",
+  "status": 401,
+  "response": {"error": {"code": "unauthorized", "message": "credencial ausente ou inválida"}}
+}

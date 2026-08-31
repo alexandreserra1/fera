@@ -1,0 +1,85 @@
+{
+  "name": "clamp_teto",
+  "tuning": {
+    "VigorPorKcal": 6,
+    "SaudePorHoraSono": 240,
+    "AnimoPorHoraSono": 100,
+    "StrainPorZona": 400,
+    "AnimoPorInteracao": 600,
+    "VinculoPorInteracao": 400,
+    "VinculoPorEncontro": 900,
+    "AnimoPorEncontro": 300,
+    "DecaiVigorHora": 20,
+    "DecaiAnimoHora": 40,
+    "DecaiVinculoHora": 15,
+    "CooldownEncontro": 21600000000000,
+    "GrowthPorEvento": 10
+  },
+  "initial": {
+    "PetID": "pet1",
+    "SchemaVer": 3,
+    "Stats": {
+      "Vigor": 5000,
+      "Animo": 5000,
+      "Saude": 7000,
+      "Vinculo": 1000
+    },
+    "Stage": 0,
+    "Trait": 0,
+    "Growth": 0,
+    "LastAtUnix": 1787378400,
+    "LastID": "",
+    "LastEncAtUnix": 0,
+    "CarrySec": 0
+  },
+  "events": [
+    {
+      "ID": "01A",
+      "At": "2026-08-22T07:00:00Z",
+      "Kind": 1,
+      "Kcal": 65535,
+      "Zone": 1,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "01B",
+      "At": "2026-08-22T08:00:00Z",
+      "Kind": 2,
+      "Kcal": 0,
+      "Zone": 0,
+      "Minutes": 65535,
+      "PeerID": ""
+    }
+  ],
+  "now_unix": 1787389200,
+  "folded": {
+    "PetID": "pet1",
+    "SchemaVer": 3,
+    "Stats": {
+      "Vigor": 9980,
+      "Animo": 10000,
+      "Saude": 10000,
+      "Vinculo": 970
+    },
+    "Stage": 0,
+    "Trait": 0,
+    "Growth": 10,
+    "LastAtUnix": 1787385600,
+    "LastID": "01B",
+    "LastEncAtUnix": 0,
+    "CarrySec": 0
+  },
+  "projected": {
+    "PetID": "pet1",
+    "Stats": {
+      "Vigor": 9960,
+      "Animo": 9960,
+      "Saude": 10000,
+      "Vinculo": 955
+    },
+    "Stage": 0,
+    "Trait": 0,
+    "Growth": 10
+  }
+}

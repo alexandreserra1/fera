@@ -1,0 +1,8 @@
+{
+  "name": "escrever no log de outro pet também é barrado, não só ler",
+  "method": "POST",
+  "path": "/v1/pets/99999999-9999-9999-9999-999999999999/events",
+  "body": {"events": [{"id": "01JA", "kind": "interact", "at": "2026-08-22T07:00:00Z", "payload": {}}]},
+  "status": 404,
+  "response": {"error": {"code": "not_found", "message": "pet não encontrado"}}
+}

@@ -1,0 +1,2767 @@
+{
+  "name": "evolucao_longa_300_efforts",
+  "tuning": {
+    "VigorPorKcal": 6,
+    "SaudePorHoraSono": 240,
+    "AnimoPorHoraSono": 100,
+    "StrainPorZona": 400,
+    "AnimoPorInteracao": 600,
+    "VinculoPorInteracao": 400,
+    "VinculoPorEncontro": 900,
+    "AnimoPorEncontro": 300,
+    "DecaiVigorHora": 20,
+    "DecaiAnimoHora": 40,
+    "DecaiVinculoHora": 15,
+    "CooldownEncontro": 21600000000000,
+    "GrowthPorEvento": 10
+  },
+  "initial": {
+    "PetID": "pet1",
+    "SchemaVer": 3,
+    "Stats": {
+      "Vigor": 5000,
+      "Animo": 5000,
+      "Saude": 7000,
+      "Vinculo": 1000
+    },
+    "Stage": 0,
+    "Trait": 0,
+    "Growth": 0,
+    "LastAtUnix": 1787378400,
+    "LastID": "",
+    "LastEncAtUnix": 0,
+    "CarrySec": 0
+  },
+  "events": [
+    {
+      "ID": "LAA",
+      "At": "2026-08-22T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAB",
+      "At": "2026-08-22T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAC",
+      "At": "2026-08-22T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAD",
+      "At": "2026-08-22T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAE",
+      "At": "2026-08-22T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAF",
+      "At": "2026-08-23T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAG",
+      "At": "2026-08-23T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAH",
+      "At": "2026-08-23T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAI",
+      "At": "2026-08-23T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAJ",
+      "At": "2026-08-23T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAK",
+      "At": "2026-08-23T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAL",
+      "At": "2026-08-24T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAM",
+      "At": "2026-08-24T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAN",
+      "At": "2026-08-24T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAO",
+      "At": "2026-08-24T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAP",
+      "At": "2026-08-24T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAQ",
+      "At": "2026-08-24T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAR",
+      "At": "2026-08-25T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAS",
+      "At": "2026-08-25T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAT",
+      "At": "2026-08-25T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAU",
+      "At": "2026-08-25T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAV",
+      "At": "2026-08-25T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAW",
+      "At": "2026-08-25T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAX",
+      "At": "2026-08-26T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAY",
+      "At": "2026-08-26T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LAZ",
+      "At": "2026-08-26T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBA",
+      "At": "2026-08-26T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBB",
+      "At": "2026-08-26T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBC",
+      "At": "2026-08-26T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBD",
+      "At": "2026-08-27T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBE",
+      "At": "2026-08-27T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBF",
+      "At": "2026-08-27T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBG",
+      "At": "2026-08-27T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBH",
+      "At": "2026-08-27T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBI",
+      "At": "2026-08-27T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBJ",
+      "At": "2026-08-28T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBK",
+      "At": "2026-08-28T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBL",
+      "At": "2026-08-28T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBM",
+      "At": "2026-08-28T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBN",
+      "At": "2026-08-28T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBO",
+      "At": "2026-08-28T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBP",
+      "At": "2026-08-29T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBQ",
+      "At": "2026-08-29T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBR",
+      "At": "2026-08-29T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBS",
+      "At": "2026-08-29T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBT",
+      "At": "2026-08-29T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBU",
+      "At": "2026-08-29T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBV",
+      "At": "2026-08-30T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBW",
+      "At": "2026-08-30T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBX",
+      "At": "2026-08-30T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBY",
+      "At": "2026-08-30T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LBZ",
+      "At": "2026-08-30T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCA",
+      "At": "2026-08-30T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCB",
+      "At": "2026-08-31T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCC",
+      "At": "2026-08-31T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCD",
+      "At": "2026-08-31T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCE",
+      "At": "2026-08-31T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCF",
+      "At": "2026-08-31T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCG",
+      "At": "2026-08-31T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCH",
+      "At": "2026-09-01T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCI",
+      "At": "2026-09-01T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCJ",
+      "At": "2026-09-01T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCK",
+      "At": "2026-09-01T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCL",
+      "At": "2026-09-01T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCM",
+      "At": "2026-09-01T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCN",
+      "At": "2026-09-02T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCO",
+      "At": "2026-09-02T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCP",
+      "At": "2026-09-02T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCQ",
+      "At": "2026-09-02T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCR",
+      "At": "2026-09-02T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCS",
+      "At": "2026-09-02T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCT",
+      "At": "2026-09-03T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCU",
+      "At": "2026-09-03T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCV",
+      "At": "2026-09-03T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCW",
+      "At": "2026-09-03T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCX",
+      "At": "2026-09-03T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCY",
+      "At": "2026-09-03T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LCZ",
+      "At": "2026-09-04T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDA",
+      "At": "2026-09-04T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDB",
+      "At": "2026-09-04T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDC",
+      "At": "2026-09-04T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDD",
+      "At": "2026-09-04T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDE",
+      "At": "2026-09-04T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDF",
+      "At": "2026-09-05T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDG",
+      "At": "2026-09-05T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDH",
+      "At": "2026-09-05T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDI",
+      "At": "2026-09-05T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDJ",
+      "At": "2026-09-05T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDK",
+      "At": "2026-09-05T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDL",
+      "At": "2026-09-06T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDM",
+      "At": "2026-09-06T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDN",
+      "At": "2026-09-06T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDO",
+      "At": "2026-09-06T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDP",
+      "At": "2026-09-06T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDQ",
+      "At": "2026-09-06T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDR",
+      "At": "2026-09-07T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDS",
+      "At": "2026-09-07T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDT",
+      "At": "2026-09-07T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDU",
+      "At": "2026-09-07T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDV",
+      "At": "2026-09-07T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDW",
+      "At": "2026-09-07T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDX",
+      "At": "2026-09-08T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDY",
+      "At": "2026-09-08T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LDZ",
+      "At": "2026-09-08T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEA",
+      "At": "2026-09-08T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEB",
+      "At": "2026-09-08T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEC",
+      "At": "2026-09-08T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LED",
+      "At": "2026-09-09T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEE",
+      "At": "2026-09-09T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEF",
+      "At": "2026-09-09T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEG",
+      "At": "2026-09-09T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEH",
+      "At": "2026-09-09T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEI",
+      "At": "2026-09-09T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEJ",
+      "At": "2026-09-10T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEK",
+      "At": "2026-09-10T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEL",
+      "At": "2026-09-10T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEM",
+      "At": "2026-09-10T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEN",
+      "At": "2026-09-10T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEO",
+      "At": "2026-09-10T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEP",
+      "At": "2026-09-11T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEQ",
+      "At": "2026-09-11T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LER",
+      "At": "2026-09-11T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LES",
+      "At": "2026-09-11T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LET",
+      "At": "2026-09-11T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEU",
+      "At": "2026-09-11T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEV",
+      "At": "2026-09-12T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEW",
+      "At": "2026-09-12T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEX",
+      "At": "2026-09-12T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEY",
+      "At": "2026-09-12T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LEZ",
+      "At": "2026-09-12T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFA",
+      "At": "2026-09-12T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFB",
+      "At": "2026-09-13T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFC",
+      "At": "2026-09-13T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFD",
+      "At": "2026-09-13T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFE",
+      "At": "2026-09-13T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFF",
+      "At": "2026-09-13T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFG",
+      "At": "2026-09-13T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFH",
+      "At": "2026-09-14T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFI",
+      "At": "2026-09-14T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFJ",
+      "At": "2026-09-14T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFK",
+      "At": "2026-09-14T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFL",
+      "At": "2026-09-14T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFM",
+      "At": "2026-09-14T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFN",
+      "At": "2026-09-15T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFO",
+      "At": "2026-09-15T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFP",
+      "At": "2026-09-15T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFQ",
+      "At": "2026-09-15T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFR",
+      "At": "2026-09-15T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFS",
+      "At": "2026-09-15T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFT",
+      "At": "2026-09-16T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFU",
+      "At": "2026-09-16T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFV",
+      "At": "2026-09-16T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFW",
+      "At": "2026-09-16T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFX",
+      "At": "2026-09-16T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFY",
+      "At": "2026-09-16T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LFZ",
+      "At": "2026-09-17T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGA",
+      "At": "2026-09-17T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGB",
+      "At": "2026-09-17T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGC",
+      "At": "2026-09-17T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGD",
+      "At": "2026-09-17T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGE",
+      "At": "2026-09-17T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGF",
+      "At": "2026-09-18T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGG",
+      "At": "2026-09-18T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGH",
+      "At": "2026-09-18T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGI",
+      "At": "2026-09-18T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGJ",
+      "At": "2026-09-18T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGK",
+      "At": "2026-09-18T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGL",
+      "At": "2026-09-19T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGM",
+      "At": "2026-09-19T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGN",
+      "At": "2026-09-19T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGO",
+      "At": "2026-09-19T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGP",
+      "At": "2026-09-19T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGQ",
+      "At": "2026-09-19T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGR",
+      "At": "2026-09-20T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGS",
+      "At": "2026-09-20T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGT",
+      "At": "2026-09-20T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGU",
+      "At": "2026-09-20T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGV",
+      "At": "2026-09-20T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGW",
+      "At": "2026-09-20T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGX",
+      "At": "2026-09-21T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGY",
+      "At": "2026-09-21T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LGZ",
+      "At": "2026-09-21T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHA",
+      "At": "2026-09-21T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHB",
+      "At": "2026-09-21T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHC",
+      "At": "2026-09-21T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHD",
+      "At": "2026-09-22T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHE",
+      "At": "2026-09-22T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHF",
+      "At": "2026-09-22T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHG",
+      "At": "2026-09-22T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHH",
+      "At": "2026-09-22T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHI",
+      "At": "2026-09-22T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHJ",
+      "At": "2026-09-23T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHK",
+      "At": "2026-09-23T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHL",
+      "At": "2026-09-23T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHM",
+      "At": "2026-09-23T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHN",
+      "At": "2026-09-23T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHO",
+      "At": "2026-09-23T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHP",
+      "At": "2026-09-24T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHQ",
+      "At": "2026-09-24T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHR",
+      "At": "2026-09-24T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHS",
+      "At": "2026-09-24T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHT",
+      "At": "2026-09-24T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHU",
+      "At": "2026-09-24T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHV",
+      "At": "2026-09-25T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHW",
+      "At": "2026-09-25T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHX",
+      "At": "2026-09-25T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHY",
+      "At": "2026-09-25T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LHZ",
+      "At": "2026-09-25T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIA",
+      "At": "2026-09-25T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIB",
+      "At": "2026-09-26T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIC",
+      "At": "2026-09-26T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LID",
+      "At": "2026-09-26T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIE",
+      "At": "2026-09-26T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIF",
+      "At": "2026-09-26T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIG",
+      "At": "2026-09-26T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIH",
+      "At": "2026-09-27T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LII",
+      "At": "2026-09-27T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIJ",
+      "At": "2026-09-27T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIK",
+      "At": "2026-09-27T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIL",
+      "At": "2026-09-27T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIM",
+      "At": "2026-09-27T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIN",
+      "At": "2026-09-28T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIO",
+      "At": "2026-09-28T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIP",
+      "At": "2026-09-28T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIQ",
+      "At": "2026-09-28T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIR",
+      "At": "2026-09-28T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIS",
+      "At": "2026-09-28T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIT",
+      "At": "2026-09-29T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIU",
+      "At": "2026-09-29T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIV",
+      "At": "2026-09-29T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIW",
+      "At": "2026-09-29T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIX",
+      "At": "2026-09-29T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIY",
+      "At": "2026-09-29T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LIZ",
+      "At": "2026-09-30T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJA",
+      "At": "2026-09-30T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJB",
+      "At": "2026-09-30T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJC",
+      "At": "2026-09-30T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJD",
+      "At": "2026-09-30T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJE",
+      "At": "2026-09-30T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJF",
+      "At": "2026-10-01T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJG",
+      "At": "2026-10-01T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJH",
+      "At": "2026-10-01T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJI",
+      "At": "2026-10-01T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJJ",
+      "At": "2026-10-01T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJK",
+      "At": "2026-10-01T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJL",
+      "At": "2026-10-02T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJM",
+      "At": "2026-10-02T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJN",
+      "At": "2026-10-02T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJO",
+      "At": "2026-10-02T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJP",
+      "At": "2026-10-02T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJQ",
+      "At": "2026-10-02T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJR",
+      "At": "2026-10-03T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJS",
+      "At": "2026-10-03T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJT",
+      "At": "2026-10-03T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJU",
+      "At": "2026-10-03T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJV",
+      "At": "2026-10-03T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJW",
+      "At": "2026-10-03T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJX",
+      "At": "2026-10-04T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJY",
+      "At": "2026-10-04T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LJZ",
+      "At": "2026-10-04T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKA",
+      "At": "2026-10-04T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKB",
+      "At": "2026-10-04T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKC",
+      "At": "2026-10-04T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKD",
+      "At": "2026-10-05T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKE",
+      "At": "2026-10-05T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKF",
+      "At": "2026-10-05T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKG",
+      "At": "2026-10-05T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKH",
+      "At": "2026-10-05T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKI",
+      "At": "2026-10-05T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKJ",
+      "At": "2026-10-06T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKK",
+      "At": "2026-10-06T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKL",
+      "At": "2026-10-06T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKM",
+      "At": "2026-10-06T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKN",
+      "At": "2026-10-06T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKO",
+      "At": "2026-10-06T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKP",
+      "At": "2026-10-07T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKQ",
+      "At": "2026-10-07T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKR",
+      "At": "2026-10-07T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKS",
+      "At": "2026-10-07T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKT",
+      "At": "2026-10-07T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKU",
+      "At": "2026-10-07T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKV",
+      "At": "2026-10-08T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKW",
+      "At": "2026-10-08T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKX",
+      "At": "2026-10-08T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKY",
+      "At": "2026-10-08T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LKZ",
+      "At": "2026-10-08T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LLA",
+      "At": "2026-10-08T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LLB",
+      "At": "2026-10-09T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LLC",
+      "At": "2026-10-09T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LLD",
+      "At": "2026-10-09T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LLE",
+      "At": "2026-10-09T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LLF",
+      "At": "2026-10-09T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LLG",
+      "At": "2026-10-09T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LLH",
+      "At": "2026-10-10T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LLI",
+      "At": "2026-10-10T06:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LLJ",
+      "At": "2026-10-10T10:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LLK",
+      "At": "2026-10-10T14:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LLL",
+      "At": "2026-10-10T18:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LLM",
+      "At": "2026-10-10T22:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    },
+    {
+      "ID": "LLN",
+      "At": "2026-10-11T02:00:00Z",
+      "Kind": 1,
+      "Kcal": 300,
+      "Zone": 2,
+      "Minutes": 0,
+      "PeerID": ""
+    }
+  ],
+  "now_unix": 1791698400,
+  "folded": {
+    "PetID": "pet1",
+    "SchemaVer": 3,
+    "Stats": {
+      "Vigor": 10000,
+      "Animo": 0,
+      "Saude": 0,
+      "Vinculo": 0
+    },
+    "Stage": 4,
+    "Trait": 0,
+    "Growth": 3000,
+    "LastAtUnix": 1791684000,
+    "LastID": "LLN",
+    "LastEncAtUnix": 0,
+    "CarrySec": 0
+  },
+  "projected": {
+    "PetID": "pet1",
+    "Stats": {
+      "Vigor": 9920,
+      "Animo": 0,
+      "Saude": 0,
+      "Vinculo": 0
+    },
+    "Stage": 4,
+    "Trait": 0,
+    "Growth": 3000
+  }
+}

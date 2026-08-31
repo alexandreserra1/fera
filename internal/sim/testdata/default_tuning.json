@@ -1,0 +1,15 @@
+{
+  "VigorPorKcal": 6,
+  "SaudePorHoraSono": 240,
+  "AnimoPorHoraSono": 100,
+  "StrainPorZona": 400,
+  "AnimoPorInteracao": 600,
+  "VinculoPorInteracao": 400,
+  "VinculoPorEncontro": 900,
+  "AnimoPorEncontro": 300,
+  "DecaiVigorHora": 20,
+  "DecaiAnimoHora": 40,
+  "DecaiVinculoHora": 15,
+  "CooldownEncontro": 21600000000000,
+  "GrowthPorEvento": 10
+}

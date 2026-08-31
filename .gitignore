@@ -1,0 +1,15 @@
+# cobertura, gerada pelo `make cover`
+c.out
+
+# a "flash" do device quando roda no Mac (cmd/feradev)
+*.flash
+
+# artefato de build do WASM: refaça com `make wasm`
+web/fera.wasm
+
+# binários compilados
+/api
+/feradev
+/firmware
+
+.DS_Store

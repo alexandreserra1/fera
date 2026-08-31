@@ -1,0 +1,7 @@
+{
+  "name": "pet_id torto é 404 igual a pet de outro: formato inválido não se distingue de alheio",
+  "method": "GET",
+  "path": "/v1/pets/nao-sou-uuid",
+  "status": 404,
+  "response": {"error": {"code": "not_found", "message": "pet não encontrado"}}
+}
